@@ -1,5 +1,9 @@
 package com.abc.algorithm;
 
+import com.abc.algorithm.collection.PriorityQueue;
+import com.abc.algorithm.collection.SortedList;
+import com.abc.algorithm.expression.CalcPost;
+import com.abc.algorithm.expression.InToPost;
 import com.abc.algorithm.sort.BubbleSort;
 import com.abc.algorithm.sort.InsertSort;
 import com.abc.algorithm.sort.SelectSort;
@@ -7,12 +11,20 @@ import com.abc.algorithm.sort.SelectSort;
 public class Main {
 	
 	public static void main(String[] args) {
-		// Ã°ÅİÅÅĞò
+		// å†’æ³¡æ’åº
 		BubbleSort.start();
-		// Ñ¡ÔñÅÅĞò
+		// é€‰æ‹©æ’åº
 		SelectSort.start();
-		// ²åÈëÅÅĞò
+		// æ’å…¥æ’åº
 		InsertSort.start();
+		// ä¼˜å…ˆçº§é˜Ÿåˆ—
+		PriorityQueue.start();
+		// åç¼€è¡¨è¾¾å¼
+		InToPost.start();
+		// è®¡ç®—è¡¨è¾¾å¼
+		CalcPost.start();
+		// æœ‰åºåˆ—è¡¨
+		SortedList.start();
 	}
 
 }

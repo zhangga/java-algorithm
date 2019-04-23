@@ -3,7 +3,7 @@ package com.abc.algorithm.sort;
 import java.util.Arrays;
 
 /**
- * Ñ¡ÔñÅÅĞò
+ * é€‰æ‹©æ’åº
  * O(N^2)
  * @author Administrator
  *
@@ -12,17 +12,17 @@ public class SelectSort {
 	
 	public static void start() {
 		sort();
-		System.out.println("Ñ¡ÔñÅÅĞò: " + Arrays.toString(arr));
+		System.out.println("é€‰æ‹©æ’åº: " + Arrays.toString(arr));
 	}
 	
-	/** ´ıÅÅĞòÊı¾İ */
+	/** å¾…æ’åºæ•°æ® */
 	private static int[] arr = new int[] {10, 2, 4, 6, 7, 2, 5};
 	
 	/**
-	 * ÅÅĞò
+	 * æ’åº
 	 */
 	private static void sort() {
-		// Ã¿ÌËÅÅĞò£¬×î×ó±ßµÄÊıÈ·¶¨Îª×îĞ¡µÄ
+		// æ¯è¶Ÿæ’åºï¼Œæœ€å·¦è¾¹çš„æ•°ç¡®å®šä¸ºæœ€å°çš„
 		for (int i = 0; i < arr.length-1; i++) {
 			int min = i;
 			for (int j = i+1; j < arr.length; j++) {
@@ -30,7 +30,7 @@ public class SelectSort {
 					min = j;
 				}
 			}
-			// ½«×îĞ¡Öµ½»»»µ½×î×ó±ß
+			// å°†æœ€å°å€¼äº¤æ¢åˆ°æœ€å·¦è¾¹
 			if (min != i) {
 				int temp = arr[i];
 				arr[i] = arr[min];

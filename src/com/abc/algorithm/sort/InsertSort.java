@@ -3,9 +3,9 @@ package com.abc.algorithm.sort;
 import java.util.Arrays;
 
 /**
- * ²åÈëÅÅĞò
- * ¼ÙÉèÒ»¸ö±êÊ¶Î»µÄ×ó±ßÊÇÅÅºÃĞòµÄÊı×é£¬ÓÒ±ßÊÇÎ´ÅÅĞòµÄÊı¾İ£¬
- * Ö»ĞèÒª´Ó±êÖ¾Î»¿ªÊ¼ÒÀ´Î½«ÓÒ±ßµÄÎ´ÅÅĞòµÄÊı¾İ²åÈëµ½×ó±ßÒÑÅÅĞòÊı×éµÄºÏÊÊÎ»ÖÃ¼´¿É
+ * æ’å…¥æ’åº
+ * å‡è®¾ä¸€ä¸ªæ ‡è¯†ä½çš„å·¦è¾¹æ˜¯æ’å¥½åºçš„æ•°ç»„ï¼Œå³è¾¹æ˜¯æœªæ’åºçš„æ•°æ®ï¼Œ
+ * åªéœ€è¦ä»æ ‡å¿—ä½å¼€å§‹ä¾æ¬¡å°†å³è¾¹çš„æœªæ’åºçš„æ•°æ®æ’å…¥åˆ°å·¦è¾¹å·²æ’åºæ•°ç»„çš„åˆé€‚ä½ç½®å³å¯
  * O(N^2)
  * @author Administrator
  *
@@ -14,17 +14,17 @@ public class InsertSort {
 	
 	public static void start() {
 		sort();
-		System.out.println("²åÈëÅÅĞò: " + Arrays.toString(arr));
+		System.out.println("æ’å…¥æ’åº: " + Arrays.toString(arr));
 	}
 	
-	/** ´ıÅÅĞòÊı¾İ */
+	/** å¾…æ’åºæ•°æ® */
 	private static int[] arr = new int[] {10, 2, 4, 6, 7, 2, 5};
 	
 	/**
-	 * ÅÅĞò
+	 * æ’åº
 	 */
 	private static void sort() {
-		// Ã¿ÌËÅÅĞò£¬middle×ó±ßµÄ¶¼ÊÇÅÅºÃĞòµÄ£¬½«middleÕÒµ½ÕıÈ·µÄÎ»ÖÃ²åÈë
+		// æ¯è¶Ÿæ’åºï¼Œmiddleå·¦è¾¹çš„éƒ½æ˜¯æ’å¥½åºçš„ï¼Œå°†middleæ‰¾åˆ°æ­£ç¡®çš„ä½ç½®æ’å…¥
 		for (int middle = 1; middle < arr.length; middle++) {
 			int temp = arr[middle]; 
 			int i = middle;

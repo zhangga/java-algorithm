@@ -3,7 +3,7 @@ package com.abc.algorithm.sort;
 import java.util.Arrays;
 
 /**
- * Ã°ÅÝÅÅÐò
+ * å†’æ³¡æŽ’åº
  * O(N^2)
  * @author Administrator
  *
@@ -12,22 +12,22 @@ public class BubbleSort {
 
 	public static void start() {
 		sort();
-		System.out.println("Ã°ÅÝÅÅÐò: " + Arrays.toString(arr));
+		System.out.println("å†’æ³¡æŽ’åº: " + Arrays.toString(arr));
 	}
 	
-	/** ´ýÅÅÐòÊý¾Ý */
+	/** å¾…æŽ’åºæ•°æ® */
 	private static int[] arr = new int[] {10, 2, 4, 6, 7, 2, 5};
 	
 	/**
-	 * ÅÅÐò
+	 * æŽ’åº
 	 */
 	private static void sort() {
-		// Ã¿ÌËÅÅÐò£¬×îÓÒ±ßµÄÊýÈ·¶¨Îª×î´óµÄ
+		// æ¯è¶ŸæŽ’åºï¼Œæœ€å³è¾¹çš„æ•°ç¡®å®šä¸ºæœ€å¤§çš„
 		for (int right = arr.length-1; right > 1; right--) {
 			for (int i = 0; i < right; i++) {
-				// ºóÕß±ÈÇ°ÕßÐ¡
+				// åŽè€…æ¯”å‰è€…å°
 				if (arr[i+1] < arr[i]) {
-					// ½»»»
+					// äº¤æ¢
 					int temp = arr[i];
 					arr[i] = arr[i+1];
 					arr[i+1] = temp;
