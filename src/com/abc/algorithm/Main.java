@@ -1,6 +1,7 @@
 package com.abc.algorithm;
 
 import com.abc.algorithm.collection.PriorityQueue;
+import com.abc.algorithm.collection.PriorityQueueHeap;
 import com.abc.algorithm.collection.SortedList;
 import com.abc.algorithm.expression.CalcPost;
 import com.abc.algorithm.expression.InToPost;
@@ -43,6 +44,7 @@ public class Main {
 		BaseSort.start();
 		// 优先级队列
 		PriorityQueue.start();
+		PriorityQueueHeap.start();
 		// 后缀表达式
 		InToPost.start();
 		// 计算表达式
