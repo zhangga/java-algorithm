@@ -8,6 +8,7 @@ import com.abc.algorithm.collection.SortedList;
 import com.abc.algorithm.expression.CalcPost;
 import com.abc.algorithm.expression.InToPost;
 import com.abc.algorithm.graph.Graph;
+import com.abc.algorithm.graph.Path;
 import com.abc.algorithm.huffman.Huffman;
 import com.abc.algorithm.recursive.Bag;
 import com.abc.algorithm.recursive.Compose;
@@ -202,7 +203,8 @@ public class Main {
 		graph.addEdgeDirW(3, 2, 20);
 		graph.addEdgeDirW(3, 4, 70);
 		graph.addEdgeDirW(4, 1, 50);
-		graph.dijkstra();
+		Path path = graph.dijkstra(0, 4);
+		System.out.println("最短路径： " + path);
 	}
 
 }

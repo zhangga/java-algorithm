@@ -247,6 +247,40 @@ public class Graph<E> {
 	}
 	
 	/**
+	 * Floyd算法，带权图的最短路径
+	 * @return
+	 */
+	public int[][] floyd() {
+		int[][] mat = adjMat.clone();
+		for (int i = 0; i < nVerts; i++) {
+			for (int j = 0; j < nVerts; j++) {
+				// 存在i->j的连通
+				int v1 = mat[i][j];
+				if (v1 == 0) {
+					continue;
+				}
+				// 找z->i的连通
+				for (int z = 0; z < nVerts; z++) {
+					// 则存在z->j的连通
+					int v2 = mat[z][i];
+					if (v2 != 0) {
+						int nv = v1 + v2;
+						// 未连通
+						if (mat[z][j] == 0) {							
+							mat[z][j] = nv;
+						}
+						// 更短路径
+						else if (mat[z][j] > nv) {
+							mat[z][j] = nv;
+						}
+					}
+				}
+			}
+		}
+		return mat;
+	}
+	
+	/**
 	 * 带权图最小生成树
 	 */
 	public List<Edge> mstw() {
@@ -295,9 +329,38 @@ public class Graph<E> {
 	
 	/**
 	 * 迪杰斯特拉算法
+	 * @param start 起点（顶点索引）
+	 * @param end 终点
 	 */
-	public void dijkstra() {
-		
+	public Path dijkstra(int start, int end) {
+		// 优先级队列
+		PriorityQueue<Path> queue = new PriorityQueue<Path>(nVerts);
+		// 已经找到最短路径的终点
+		Set<Integer> visited = new HashSet<>();
+		// 从起点开始
+		Path path = new Path(0, start);
+		// 直到到达终点
+		while ((path = findPath(path, queue, visited)).end() != end);
+		return path;
+	}
+	
+	private Path findPath(Path path, PriorityQueue<Path> queue, Set<Integer> visited) {
+		// 已经找到了最短路径的忽略
+		if (visited.contains(path.end())) {
+			return queue.poll();
+		}
+		int start = path.end();
+		visited.add(start);
+		// 找到点的邻接点
+		for (int i = 0; i < nVerts; i++) {
+			int d = adjMat[start][i];
+			if (start != i && d > 0) {
+				// 将邻接点的新路径加入优先级队列
+				Path pn = new Path(path, i, d);
+				queue.add(pn);
+			}
+		}
+		return queue.poll();
 	}
 	
 	private void displayVertex(int index) {
